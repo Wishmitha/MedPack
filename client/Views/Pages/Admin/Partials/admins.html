@@ -1,0 +1,84 @@
+<template name="admins">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="well well-sm">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                            <div class="row">
+                                <div class="col-lg-2 col-lg-offset-6 col-md-2 col-sm-2 col-xs-2">
+                                    <center><h4><strong>Admins</strong></h4></center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                            <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-default btn-md" id="newAdmin">
+                                    <span class="glyphicon glyphicon-plus"></span> New Admin
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            {{#each users}}
+
+                {{# if isAdmin}}
+
+                    {{#if isCurrentUser}}
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                            <div class="row">
+
+                                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" style="padding-bottom: 20px">
+
+                                            {{profile.firstName}} {{profile.lastName}}
+
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn btn-default btn-sm" id="view">
+                                                    <span class="glyphicon glyphicon-eye-open"></span> View
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-sm" id="delete">
+                                                    <span class="glyphicon glyphicon-trash"></span> Delete
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            Email Address : <span class="text-muted">{{email}}</span><br><br>
+                                            Date Joined : <span class="text-muted">{{createdAt}}</span><br><br>
+                                            Address : <span class="text-muted">{{profile.address}}</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    {{/if}}
+
+                {{/if}}
+
+            {{/each}}
+
+        </div>
+
+    </div>
+
+
+</template>

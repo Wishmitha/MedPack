@@ -1,0 +1,95 @@
+<template name="newAdmin">
+
+    <div class="at-form">
+        <div class="row">
+
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="row">
+
+                    <div class="at-title">
+                        <h3>New Admin</h3>
+                    </div>
+
+                    <div class="at-pwd-form">
+                        <form role="form" id="at-pwd-form" novalidate="" action="#" method="POST">
+                            <fieldset>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-email">
+                                        Email
+                                    </label>
+                                    <input type="email" class="form-control" id="at-field-email" name="at-field-email" placeholder="Email" autocapitalize="none" autocorrect="off" autocomplete="off">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-password">
+                                        Password
+                                    </label>
+                                    <input type="password" class="form-control" id="at-field-password" name="at-field-password" placeholder="Password" autocapitalize="none" autocorrect="off">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-password_again">
+                                        Password (again)
+                                    </label>
+                                    <input type="password" class="form-control" id="at-field-password_again" name="at-field-password_again" placeholder="Password (again)" autocapitalize="none" autocorrect="off">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-firstName">
+                                        First Name
+                                    </label>
+                                    <input type="text" class="form-control" id="at-field-firstName" name="at-field-firstName" placeholder="Your First Name" autocapitalize="none" autocorrect="off">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-lastName">
+                                        Last Name
+                                    </label>
+                                    <input type="text" class="form-control" id="at-field-lastName" name="at-field-lastName" placeholder="Your Last Name" autocapitalize="none" autocorrect="off">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-address">
+                                        Address
+                                    </label>
+                                    <input type="text" class="form-control" id="at-field-address" name="at-field-address" placeholder="Your Postal Address" autocapitalize="none" autocorrect="off">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input field">
+                                    <label>Role</label>
+                                    <select class="form-control" id="at-field-role" name="at-field-role">
+
+                                        <option value="admin">Admin</option>
+
+                                        <option value="doctor">Doctor</option>
+
+                                        <option value="patient">Patient</option>
+
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="at-btn submit btn btn-lg btn-primary center-block" id="at-btn">
+                                    <span class="glyphicon glyphicon-check"></span> Register
+                                </button>
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

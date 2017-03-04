@@ -1,0 +1,13 @@
+<template name="main">
+
+    {{#if isAdmin}}
+        {{> admin}}
+    {{/if}}
+    {{#if isDoctor}}
+        {{> doctor}}
+    {{/if}}
+    {{#if isPatient}}
+        {{> patinet}}
+    {{/if}}
+    <p><a href="#" class="logout">Logout</a></p>
+</template>
