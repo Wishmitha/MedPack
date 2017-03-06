@@ -30,10 +30,6 @@ AccountsTemplates.addFields([
         type: 'select',
         select:[
                 {
-                    text:'Admin',
-                    value:'admin'
-                },
-                {
                     text:'Doctor',
                     value:'doctor'
                 },

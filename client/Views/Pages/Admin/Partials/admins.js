@@ -19,6 +19,10 @@ Template.admins.helpers({
 
     email : function () {
         return Meteor.users.findOne(this._id).emails[0].address;
+    },
+
+    addedBy:function () {
+        return Meteor.users.findOne(Meteor.users.findOne(this._id).profile.addedBy).profile.firstName.concat(' '.concat(Meteor.users.findOne(Meteor.users.findOne(this._id).profile.addedBy).profile.lastName));
     }
 });
 

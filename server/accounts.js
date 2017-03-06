@@ -2,7 +2,10 @@ AccountsTemplates.configure({
 
     postSignUpHook: function (userID,info) {
                         Roles.addUsersToRoles(userID,info.profile.role);
-                    }
+                    },
+
+    //enforceEmailVerification: true, // verifying the user email. should be implemented. not used in development
+    //sendVerificationEmail: true
 
 });
 
@@ -12,3 +15,6 @@ Meteor.users.allow({
         return true;
     }
 });
+
+// used to create admins from anoth  admin
+
