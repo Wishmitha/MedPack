@@ -94,3 +94,35 @@ Router.route('/main/new-admin',
     }
 );
 
+Router.route('/main/edit-profile',
+
+    {
+        name: "editProfile",
+
+        onBeforeAction: function () {
+
+            if (!Meteor.user()) {
+                if (!Meteor.loggingIn()) {
+                    Router.go("home");
+                }
+            }/*else if(Roles.userIsInRole(Meteor.userId(),'doctor') || Roles.userIsInRole(Meteor.userId(),'patient')){
+                Router.go("main");
+            }*/
+            this.next();
+        },
+
+        action:function(){
+            if(Roles.userIsInRole(Meteor.userId(),'doctor')){
+                this.layout('admin');
+                this.render('newAdmin', {to: 'main'});
+            }else if(Roles.userIsInRole(Meteor.userId(),'patient')){
+                this.layout('admin');
+                this.render('newAdmin', {to: 'main'});
+            }else if(Roles.userIsInRole(Meteor.userId(),'admin')){
+                this.layout('admin');
+                this.render('adminEditProfile', {to: 'main'});
+            }
+        }
+    }
+);
+
