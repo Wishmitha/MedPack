@@ -43,3 +43,7 @@ AccountsTemplates.addFields([
         required: true,
     }
 ]);
+
+AccountsTemplates.configure({
+    forbidClientAccountCreation : true
+});

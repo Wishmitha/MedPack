@@ -7,7 +7,7 @@ Router.route('/main/all-users',
 
             if (!Meteor.user()) {
                 if (!Meteor.loggingIn()) {
-                    Router.go("home");
+                    Router.go("login");
                 }
             }else if(Roles.userIsInRole(Meteor.userId(),'doctor') || Roles.userIsInRole(Meteor.userId(),'patient')){
                 Router.go("main");
@@ -31,7 +31,7 @@ Router.route('/main/medical-centers',
 
             if (!Meteor.user()) {
                 if (!Meteor.loggingIn()) {
-                    Router.go("home");
+                    Router.go("login");
                 }
             }else if(Roles.userIsInRole(Meteor.userId(),'doctor') || Roles.userIsInRole(Meteor.userId(),'patient')){
                 Router.go("main");
@@ -55,7 +55,7 @@ Router.route('/main/admins',
 
             if (!Meteor.user()) {
                 if (!Meteor.loggingIn()) {
-                    Router.go("home");
+                    Router.go("login");
                 }
             }else if(Roles.userIsInRole(Meteor.userId(),'doctor') || Roles.userIsInRole(Meteor.userId(),'patient')){
                 Router.go("main");
@@ -79,7 +79,7 @@ Router.route('/main/new-admin',
 
             if (!Meteor.user()) {
                 if (!Meteor.loggingIn()) {
-                    Router.go("home");
+                    Router.go("login");
                 }
             }else if(Roles.userIsInRole(Meteor.userId(),'doctor') || Roles.userIsInRole(Meteor.userId(),'patient')){
                 Router.go("main");
@@ -103,7 +103,7 @@ Router.route('/main/edit-profile',
 
             if (!Meteor.user()) {
                 if (!Meteor.loggingIn()) {
-                    Router.go("home");
+                    Router.go("login");
                 }
             }
             this.next();
@@ -133,7 +133,7 @@ Router.route('/main/edit-account',
 
             if (!Meteor.user()) {
                 if (!Meteor.loggingIn()) {
-                    Router.go("home");
+                    Router.go("login");
                 }
             }
 

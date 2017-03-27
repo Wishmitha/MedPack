@@ -1,12 +1,16 @@
-Router.route('/',
+Router.route('/user-login',
     {
-        name: "home",
+        name: "login",
 
         onBeforeAction: function () {
             if (!!Meteor.user()) {
                 if (!Meteor.loggingIn()) Router.go("main");
             }
             this.next();
+        },
+
+        action : function () {
+            this.render('login');
         }
     });
 
@@ -18,12 +22,32 @@ Router.route('/main',
 
             if (! Meteor.user()) {
                 if (!Meteor.loggingIn()){
-                    Router.go("home");
+                    Router.go("login");
                 }
             }else if(Roles.userIsInRole(Meteor.userId(),'admin')) {
                 Router.go("allUsers");
 
             }
             this.next();
+        },
+
+        action : function () {
+            this.render('main');
+        }
+    });
+
+Router.route('/doctor-register',
+    {
+        name: "doctorRegister",
+
+        onBeforeAction: function () {
+            if (!!Meteor.user()) {
+                if (!Meteor.loggingIn()) Router.go("main");
+            }
+            this.next();
+        },
+
+        action : function () {
+            this.render('doctorRegister');
         }
     });
