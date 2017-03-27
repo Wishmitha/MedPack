@@ -22,10 +22,10 @@ Router.route('/main/all-users',
     }
 );
 
-Router.route('/main/medical-centers',
+Router.route('/main/admin-medical-centers',
 
     {
-        name: "medicalCenters",
+        name: "adminMedicalCenters",
 
         onBeforeAction: function () {
 
@@ -111,7 +111,7 @@ Router.route('/main/edit-profile',
 
         action:function(){
             if(Roles.userIsInRole(Meteor.userId(),'doctor')){
-                this.layout('admin');
+                this.layout('doctor');
                 this.render('newAdmin', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'patient')){
                 this.layout('admin');
@@ -142,8 +142,8 @@ Router.route('/main/edit-account',
 
         action:function(){
             if(Roles.userIsInRole(Meteor.userId(),'doctor')){
-                this.layout('admin');
-                this.render('newAdmin', {to: 'main'});
+                this.layout('doctor');
+                this.render('adminEditAccount', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'patient')){
                 this.layout('admin');
                 this.render('newAdmin', {to: 'main'});

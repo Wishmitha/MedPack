@@ -39,6 +39,18 @@ Template.adminNavbar.events({
         Session.set('clickedAdmins', 'active');
     },
 
+    'click #editProfile':function (event) {
+        Session.set('clickedAllUsers', '');
+        Session.set('clickedMedicalCenters', '');
+        Session.set('clickedAdmins', '');
+    },
+
+    'click #editAccount':function (event) {
+        Session.set('clickedAllUsers', '');
+        Session.set('clickedMedicalCenters', '');
+        Session.set('clickedAdmins', '');
+    },
+
     'click #logout': function(event) {
         Session.set('clickedAllUsers', '');
         Session.set('clickedMedicalCenters', '');

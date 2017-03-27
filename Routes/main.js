@@ -26,7 +26,8 @@ Router.route('/main',
                 }
             }else if(Roles.userIsInRole(Meteor.userId(),'admin')) {
                 Router.go("allUsers");
-
+            }else if(Roles.userIsInRole(Meteor.userId(),'doctor')) {
+                Router.go("doctorMedicalCenters");
             }
             this.next();
         },
