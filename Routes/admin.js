@@ -143,13 +143,13 @@ Router.route('/main/edit-account',
         action:function(){
             if(Roles.userIsInRole(Meteor.userId(),'doctor')){
                 this.layout('doctor');
-                this.render('adminEditAccount', {to: 'main'});
+                this.render('editAccount', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'patient')){
                 this.layout('admin');
                 this.render('newAdmin', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'admin')){
                 this.layout('admin');
-                this.render('adminEditAccount', {to: 'main'});
+                this.render('editAccount', {to: 'main'});
             }
         }
     }
