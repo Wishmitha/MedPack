@@ -46,12 +46,13 @@ Template.doctorRegister.events({
         var passwordAgainVar = event.target.passwordAgain.value;
         var initialsVar = event.target.initials.value;
         var familyNameVar = event.target.familyName.value;
+        var telNoVar = event.target.telNo.value;
         var slmcRegNoVar = event.target.slmcRegNo.value;
         var nicNoVar = event.target.nicNo.value;
         var addressVar = event.target.address.value;
 
         //Check for empty fields
-        if(emailVar.length==0 || passwordVar.length==0 || passwordAgainVar.length==0 || initialsVar.length==0 || familyNameVar.length==0 || slmcRegNoVar.length==0 || nicNoVar.length==0 || addressVar.length==0){
+        if(emailVar.length==0 || passwordVar.length==0 || passwordAgainVar.length==0 || initialsVar.length==0 || familyNameVar.length==0 || telNoVar.length==0 || slmcRegNoVar.length==0 || nicNoVar.length==0 || addressVar.length==0){
             Session.set('isEmpty',true);
         }
 
@@ -79,7 +80,7 @@ Template.doctorRegister.events({
 
         // Method call for create user
         if(!Session.get('emailError') && !Session.get('isEmpty')) {
-            Meteor.call('createDoctor', emailVar, passwordVar, initialsVar, familyNameVar, slmcRegNoVar,nicNoVar,addressVar);
+            Meteor.call('createDoctor', emailVar, passwordVar, initialsVar, familyNameVar, telNoVar, slmcRegNoVar,nicNoVar,addressVar);
             alert("Your account has been successfully created.");
             Meteor.loginWithPassword(emailVar,passwordVar);
             Router.go('main');
