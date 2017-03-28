@@ -52,3 +52,64 @@ Router.route('/doctor-register',
             this.render('doctorRegister');
         }
     });
+
+Router.route('/main/edit-account',
+
+    {
+        name: "editAccount",
+
+        onBeforeAction: function () {
+
+            if (!Meteor.user()) {
+                if (!Meteor.loggingIn()) {
+                    Router.go("login");
+                }
+            }
+
+            this.next();
+        },
+
+        action:function(){
+            if(Roles.userIsInRole(Meteor.userId(),'doctor')){
+                this.layout('doctor');
+                this.render('editAccount', {to: 'main'});
+            }else if(Roles.userIsInRole(Meteor.userId(),'patient')){
+                this.layout('admin');
+                this.render('newAdmin', {to: 'main'});
+            }else if(Roles.userIsInRole(Meteor.userId(),'admin')){
+                this.layout('admin');
+                this.render('editAccount', {to: 'main'});
+            }
+        }
+    }
+);
+
+Router.route('/main/edit-profile',
+
+    {
+        name: "editProfile",
+
+        onBeforeAction: function () {
+
+            if (!Meteor.user()) {
+                if (!Meteor.loggingIn()) {
+                    Router.go("login");
+                }
+            }
+            this.next();
+        },
+
+        action:function(){
+            if(Roles.userIsInRole(Meteor.userId(),'doctor')){
+                this.layout('doctor');
+                this.render('doctorEditProfile', {to: 'main'});
+            }else if(Roles.userIsInRole(Meteor.userId(),'patient')){
+                this.layout('admin');
+                this.render('newAdmin', {to: 'main'});
+            }else if(Roles.userIsInRole(Meteor.userId(),'admin')){
+                this.layout('admin');
+                this.render('adminEditProfile', {to: 'main'});
+            }
+        }
+    }
+);

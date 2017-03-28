@@ -40,3 +40,4 @@ Template.doctorNavbar.events({
         Router.go('/');
     }
 });
+
