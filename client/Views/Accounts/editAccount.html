@@ -1,0 +1,89 @@
+<template name="editAccount">
+
+    <div class="at-form">
+        <div class="row">
+
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="row">
+
+                    <div class="at-title">
+                        <h3>Edit Account</h3>
+                    </div>
+
+                    <div class="at-pwd-form">
+
+                        <form role="form" id="at-pwd-form" novalidate="" action="#" method="POST">
+
+                            <fieldset>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-firstName">
+                                        Old Password
+                                    </label>
+                                    <input type="password" class="form-control" id="at-field-firstName" name="oldPassword" placeholder="Old Password" autocapitalize="none" autocorrect="off">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                {{#unless passwordError}}
+
+                                    <div class="at-input form-group">
+                                        <label class="control-label" for="at-field-lastName">
+                                            New Password
+                                        </label>
+                                        <input type="password" class="form-control" id="at-field-lastName" name="newPassword" placeholder="New Password" autocapitalize="none" autocorrect="off">
+
+                                        <span class="help-block hide"></span>
+                                    </div>
+
+                                    <div class="at-input form-group">
+                                        <label class="control-label" for="at-field-address">
+                                            New Password (Again)
+                                        </label>
+                                        <input type="password" class="form-control" id="at-field-address" name="newPasswordAgain" placeholder="New Password (Again)" autocapitalize="none" autocorrect="off" >
+
+                                        <span class="help-block hide"></span>
+                                    </div>
+
+                                {{/unless}}
+
+                                {{#if passwordError}}
+
+                                    <div class="form-group has-error has-feedback" id="errorPassword">
+                                        <label class="control-label" for="inputError">
+                                            Password
+                                        </label>
+                                        <input type="password" class="form-control" id="at-field-address" name="newPassword" placeholder="Password" autocapitalize="none" autocorrect="off">
+
+                                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                    </div>
+
+                                    <div class="form-group has-error has-feedback" id="errorPasswordAgain">
+                                        <label class="control-label" for="inputError">
+                                            Password (Again)
+                                        </label>
+                                        <input type="password" class="form-control" id="at-field-address" name="newPasswordAgain" placeholder="Password (Again)" autocapitalize="none" autocorrect="off">
+
+                                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                        <label class="control-label" for="inputError">Password does not match</label>
+                                    </div>
+
+                                {{/if}}
+
+
+                                {{#if isEmpty}}
+                                    <div class="form-group has-error has-feedback" id="errorPasswordAgain">
+                                        <label class="control-label" for="inputError">There are empty fields in the form. Please fill out the required fields.</label>
+                                    </div>
+                                {{/if}}
+
+                                <input id="btn-login" href="#" class="at-btn submit btn btn-lg btn-primary center-block" type="submit" value="Update">
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

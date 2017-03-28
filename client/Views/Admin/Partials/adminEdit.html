@@ -1,0 +1,63 @@
+<template name="adminEditProfile">
+
+    <div class="at-form">
+        <div class="row">
+
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="row">
+
+                    <div class="at-title">
+                        <h3>Edit Profile</h3>
+                    </div>
+
+                    <div class="at-pwd-form">
+
+                        <form role="form" id="at-pwd-form" novalidate="" action="#" method="POST">
+
+                            <fieldset>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-firstName">
+                                        First Name
+                                    </label>
+                                    <input type="text" class="form-control" id="at-field-firstName" name="firstName" placeholder="Your First Name" autocapitalize="none" autocorrect="off" value="{{firstName}}">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-lastName">
+                                        Last Name
+                                    </label>
+                                    <input type="text" class="form-control" id="at-field-lastName" name="lastName" placeholder="Your Last Name" autocapitalize="none" autocorrect="off" value="{{lastName}}">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-address">
+                                        Address
+                                    </label>
+                                    <input type="text" class="form-control" id="at-field-address" name="address" placeholder="Your Postal Address" autocapitalize="none" autocorrect="off" value="{{address}}">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                {{#if isEmpty}}
+                                    <div class="form-group has-error has-feedback" id="errorPasswordAgain">
+                                        <label class="control-label" for="inputError">There are empty fields in the form. Please fill out the required fields.</label>
+                                    </div>
+                                {{/if}}
+
+                                <input id="btn-login" href="#" class="at-btn submit btn btn-lg btn-primary center-block" type="submit" value="Update">
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
