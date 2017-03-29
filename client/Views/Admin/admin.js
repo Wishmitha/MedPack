@@ -3,5 +3,6 @@
 
 Template.admin.onCreated(function () {
     Meteor.subscribe('allUsers');
+    Meteor.subscribe('medicalCenters');
 });
 

@@ -1,7 +1,6 @@
 Template.doctorEditProfile.onCreated(function () {
 
     Session.set('isEmpty',false);
-    console.log('lol');
 
 });
 

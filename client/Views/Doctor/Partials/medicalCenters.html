@@ -1,4 +1,4 @@
-<template name="medicalCenters">
+<template name="doctorMedicalCenters">
     <div class="container-fluid">
 
         <div class="row">
@@ -12,6 +12,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-default btn-md" id="newMedicalCenter">
+                                    <span class="glyphicon glyphicon-plus"></span> Join Medical Center
+                                </button>
+                                <button type="button" class="btn btn-default btn-md" id="newMedicalCenter">
+                                    <span class="glyphicon glyphicon-plus"></span> New Medical Center
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -35,19 +46,12 @@
                                     {{name}}
 
                                     <div class="btn-group pull-right">
-
                                         <button type="button" class="btn btn-default btn-sm" id="view">
-                                            <span class="glyphicon glyphicon-eye-open"></span> View
+                                            <span class="glyphicon glyphicon-log-in"></span> Login
                                         </button>
-
-                                        <button type="button" class="btn btn-default btn-sm" id="verify">
-                                            <span class="glyphicon glyphicon-ok"></span> Verify
-                                        </button>
-
                                         <button type="button" class="btn btn-default btn-sm" id="delete">
                                             <span class="glyphicon glyphicon-trash"></span> Delete
                                         </button>
-
                                     </div>
                                 </div>
 

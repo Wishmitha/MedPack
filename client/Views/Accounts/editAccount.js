@@ -6,8 +6,6 @@ Template.editAccount.onCreated(function () {
 
     Session.set('passwordUpdate',false);
 
-    console.log('lol');
-
 });
 
 Template.editAccount.helpers({

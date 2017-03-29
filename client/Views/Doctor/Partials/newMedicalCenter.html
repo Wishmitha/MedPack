@@ -1,0 +1,92 @@
+<template name="newMedicalCenter">
+
+    <div class="at-form">
+        <div class="row">
+
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="row">
+
+                    <div class="at-title">
+                        <h3>New Medical Center</h3>
+                    </div>
+
+                    <div class="at-pwd-form">
+
+                        <form role="form" id="at-pwd-form" novalidate="" action="#" method="POST">
+
+                            <fieldset>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-firstName">
+                                        Medical Center Name
+                                    </label>
+                                    <input type="text" class="form-control" id="at-field-firstName" name="medicalCenterName" placeholder="If a paticular name is not given to the medical center, enter the name as follows (Medical Center : Dr. Your name with initials)" autocapitalize="none" autocorrect="off" onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >=97 && event.charCode <= 122) || event.charCode==32 || event.charCode==46 || event.charCode==58'>
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-address">
+                                        Address
+                                    </label>
+                                    <input type="text" class="form-control" id="at-field-address" name="address" placeholder="Postal Address" autocapitalize="none" autocorrect="off">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-lastName">
+                                        Contact Number
+                                    </label>
+                                    <input type="tel" class="form-control" id="at-field-lastName" name="telNo" placeholder="Telephone or Mobile Number" autocapitalize="none" autocorrect="off" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' maxlength="10">
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-lastName">
+                                        Open Hours
+                                    </label>
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+
+                                            <div class="pull-left">
+                                                <label>
+                                                    Morning Hours :
+                                                </label>
+
+                                                <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="morningOpen">  to  <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="morningClose">
+                                            </div>
+
+                                            <div class="pull-right">
+                                                <label>
+                                                    Evening Hours :
+                                                </label>
+
+                                                <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="eveningOpen">  to  <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="eveningClose">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                {{#if isEmpty}}
+                                    <div class="form-group has-error has-feedback" id="errorPasswordAgain">
+                                        <label class="control-label" for="inputError">There are empty fields in the form. Please fill out the required fields.</label>
+                                    </div>
+                                {{/if}}
+
+                                <input id="btn-login" href="#" class="at-btn submit btn btn-lg btn-primary center-block" type="submit" value="Create">
+
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

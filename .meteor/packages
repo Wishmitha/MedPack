@@ -39,3 +39,7 @@ twbs:bootstrap
 
 #allthings
 meteortoys:allthings
+
+#auto-form and collections
+#aldeed:collection2
+#aldeed:autoform@4.0.0
