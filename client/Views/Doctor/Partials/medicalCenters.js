@@ -3,6 +3,11 @@ Template.doctorMedicalCenters.events({
         Session.set('clickedMedicalCenters', '');
         Router.go('newMedicalCenter');
 
+    },
+
+    'click #login':function () {
+        Session.set('clickedMedicalCenters', '');
+        Router.go('medicalCenter',{_id:this._id});
     }
 });
 

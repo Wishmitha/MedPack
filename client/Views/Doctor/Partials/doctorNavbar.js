@@ -22,6 +22,7 @@ Template.doctorNavbar.events({
 
     'click #medicalCenters':function (event) {
         Session.set('clickedMedicalCenters', 'active');
+        Router.go("doctorMedicalCenters");
     },
 
     'click #editProfile': function(event) {

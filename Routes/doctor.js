@@ -45,3 +45,14 @@ Router.route('/main/new-medical-center',
         }
     }
 );
+
+Router.route('/main/doctor-medical-centers/:_id',
+    {
+        name:"medicalCenter",
+
+        action:function(){
+            this.layout('doctor');
+            this.render('prescription', {to: 'main'});
+        }
+    }
+);
