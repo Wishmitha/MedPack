@@ -2,6 +2,8 @@ Template.doctorNavbar.onCreated(function () {
     Session.set('clickedMedicalCenters', 'active');
 });
 
+// session varibles for update doctor navbar
+
 Template.doctorNavbar.helpers({
 
     clickedMedicalCenters:function () {

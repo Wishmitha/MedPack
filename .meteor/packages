@@ -41,5 +41,12 @@ twbs:bootstrap
 meteortoys:allthings
 
 #auto-form and collections
-#aldeed:collection2
-#aldeed:autoform@4.0.0
+aldeed:collection2
+aldeed:autoform@4.0.0
+ongoworks:security
+
+practicalmeteor:mocha
+dburles:factory
+xolvio:cleaner
+
+

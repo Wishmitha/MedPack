@@ -22,7 +22,7 @@ Template.adminEditProfile.helpers({
 });
 
 Template.adminEditProfile.events({
-    'submit form': function(event) {
+    'submit form': function(event) { // updates admin profile
 
         Session.set('isEmpty',false);
 
@@ -31,7 +31,7 @@ Template.adminEditProfile.events({
         var lastNameVar = event.target.lastName.value;
         var addressVar = event.target.address.value;
 
-        if(firstNameVar.length == 0 || lastNameVar.length == 0 || addressVar.length == 0){
+        if(firstNameVar.length == 0 || lastNameVar.length == 0 || addressVar.length == 0){ // check for empty input fields
             Session.set('isEmpty',true);
         }
 

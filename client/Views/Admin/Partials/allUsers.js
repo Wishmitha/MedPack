@@ -2,6 +2,7 @@ Template.allUsers.onCreated(function () {
     Session.set('clickedAllUsers', 'active');
 });
 
+//displays all the users seperately as patients and doactors
 
 Template.allUsers.helpers({
     users : function () {

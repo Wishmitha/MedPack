@@ -14,7 +14,7 @@ Template.newMedicalCenter.helpers({
 
 Template.newMedicalCenter.events({
 
-    'submit form': function(event) {
+    'submit form': function(event) { // creates a new medical center
 
         Session.set('isEmpty',false);
 

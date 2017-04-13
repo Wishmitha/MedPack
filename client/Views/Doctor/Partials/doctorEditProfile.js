@@ -19,7 +19,7 @@ Template.doctorEditProfile.helpers({
 });
 
 Template.doctorEditProfile.events({
-    'submit form': function(event) {
+    'submit form': function(event) { // updates the profile of the doctor
 
 
 
@@ -30,7 +30,7 @@ Template.doctorEditProfile.events({
         var telNoVar = event.target.telNo.value;
         var addressVar = event.target.address.value;
 
-        if(telNoVar.length == 0 || addressVar.length == 0){
+        if(telNoVar.length == 0 || addressVar.length == 0){ //check for empty input fields
             Session.set('isEmpty',true);
         }
 

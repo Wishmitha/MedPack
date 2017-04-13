@@ -2,6 +2,7 @@ Template.admins.onCreated(function () {
     Session.set('clickedAdmins', 'active');
 });
 
+// displays current admins in the template
 
 Template.admins.helpers({
 

@@ -11,6 +11,8 @@ Template.doctorMedicalCenters.events({
     }
 });
 
+// displays medical centers of the current doctor in the template
+
 Template.doctorMedicalCenters.helpers({
     medicalcenters: function () {
         return MedicalCenters.find({createdBy:Meteor.userId()});

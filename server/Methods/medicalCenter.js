@@ -1,6 +1,6 @@
 Meteor.methods({
 
-    createMedicalCenter : function (name,address,telNo,morningOpen,morningClose,eveningOpen,eveningClose) {
+    createMedicalCenter : function (name,address,telNo,morningOpen,morningClose,eveningOpen,eveningClose) { // server method to create a medical center
         MedicalCenters.insert({
             name:name,
             address: address,

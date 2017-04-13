@@ -22,6 +22,8 @@ Template.adminNavbar.helpers({
 
 Template.adminNavbar.events({
 
+    // session variables for update navbar
+
     'click #allUsers':function (event) {
         Session.set('clickedAllUsers', 'active');
         Session.set('clickedMedicalCenters', '');

@@ -1,6 +1,6 @@
 Meteor.methods({
 
-    createAdmin : function (email,password,firstName,lastName,address) {
+    createAdmin : function (email,password,firstName,lastName,address) { // server method to create an admin
         var adminID = Accounts.createUser({
                          email: email,
                          password: password,

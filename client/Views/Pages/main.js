@@ -6,6 +6,8 @@ Template.main.events({
     }
 });
 
+// main interface where displays seperate interaces for different roles
+
 Template.main.helpers({
     'isAdmin': function(){
         return Roles.userIsInRole(Meteor.userId(),'admin');
