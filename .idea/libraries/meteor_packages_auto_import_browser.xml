@@ -420,7 +420,6 @@
         <item url="file://$USER_HOME$/.meteor/packages/allow-deny/1.0.5/web.browser/allow-deny-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/buffer.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/css.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/ongoworks_security/2.0.1/web.browser/lib/client/Security.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/server.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/stubs.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/client.js" />
@@ -451,9 +450,6 @@
         <item url="file://$USER_HOME$/.meteor/packages/id-map/1.0.9/web.browser/id-map.js" />
         <item url="file://$USER_HOME$/.meteor/packages/jquery/1.11.10/web.browser/main.js" />
         <item url="file://$USER_HOME$/.meteor/packages/jquery/1.11.10/web.browser/jquery.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/ongoworks_security/2.0.1/web.browser/lib/client/Security.Rule.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/ongoworks_security/2.0.1/web.browser/lib/client/Security.Check.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/ongoworks_security/2.0.1/web.browser/lib/builtInRules.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_resend_verification_email_link.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_input.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_signup_link.js" />
@@ -463,7 +459,9 @@
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_title.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_pwd_link.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_signin_link.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/natestrauser_select2/4.0.3/web.browser/lib/select2/dist/js/select2.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/ensure_signed_in.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/natestrauser_select2/4.0.3/web.browser/lib/select2/dist/css/select2.css" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_error.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_pwd_form_btn.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_pwd_form.js" />
@@ -473,10 +471,13 @@
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_form.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_message.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/core.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/aldeed_template-extension/3.4.3/web.browser/packages/aldeed:template-extension.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/client.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_oauth.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/aldeed_autoform-select2/2.0.3/web.browser/packages/aldeed_autoform-select2/template.autoform-select2.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/methods.js" />
         <item url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.3.9/web.browser/t9n.coffee" />
+        <item url="file://$USER_HOME$/.meteor/packages/aldeed_autoform-select2/2.0.3/web.browser/autoform-select2.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/utils.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/field.js" />
         <item url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.3.9/web.browser/t9n/et.coffee" />
@@ -1013,7 +1014,6 @@
       <root url="file://$USER_HOME$/.meteor/packages/allow-deny/1.0.5/web.browser/allow-deny-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/buffer.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/css.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/ongoworks_security/2.0.1/web.browser/lib/client/Security.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/server.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/stubs.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.7.9/web.browser/client.js" />
@@ -1044,9 +1044,6 @@
       <root url="file://$USER_HOME$/.meteor/packages/id-map/1.0.9/web.browser/id-map.js" />
       <root url="file://$USER_HOME$/.meteor/packages/jquery/1.11.10/web.browser/main.js" />
       <root url="file://$USER_HOME$/.meteor/packages/jquery/1.11.10/web.browser/jquery.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/ongoworks_security/2.0.1/web.browser/lib/client/Security.Rule.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/ongoworks_security/2.0.1/web.browser/lib/client/Security.Check.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/ongoworks_security/2.0.1/web.browser/lib/builtInRules.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_resend_verification_email_link.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_input.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_signup_link.js" />
@@ -1056,7 +1053,9 @@
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_title.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_pwd_link.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_signin_link.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/natestrauser_select2/4.0.3/web.browser/lib/select2/dist/js/select2.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/ensure_signed_in.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/natestrauser_select2/4.0.3/web.browser/lib/select2/dist/css/select2.css" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_error.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_pwd_form_btn.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_pwd_form.js" />
@@ -1066,10 +1065,13 @@
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_form.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_message.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/core.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/aldeed_template-extension/3.4.3/web.browser/packages/aldeed:template-extension.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/client.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/templates_helpers/at_oauth.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/aldeed_autoform-select2/2.0.3/web.browser/packages/aldeed_autoform-select2/template.autoform-select2.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/methods.js" />
       <root url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.3.9/web.browser/t9n.coffee" />
+      <root url="file://$USER_HOME$/.meteor/packages/aldeed_autoform-select2/2.0.3/web.browser/autoform-select2.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/utils.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.14.2/web.browser/lib/field.js" />
       <root url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.3.9/web.browser/t9n/et.coffee" />

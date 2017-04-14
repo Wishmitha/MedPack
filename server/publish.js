@@ -10,6 +10,12 @@ Meteor.publish('allUsers',function () { // publishing user collections
 
 });
 
+Meteor.publish('allPatients',function () {
+
+    return Meteor.users.find({roles:["patient"]});
+
+});
+
 Meteor.publish('medicalCenters',function () { // publishing medical center collection
 
     return MedicalCenters.find({});
