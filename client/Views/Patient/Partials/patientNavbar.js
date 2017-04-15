@@ -1,13 +1,17 @@
 Template.patientNavbar.onCreated(function () {
-    Session.set('clickedMedicalCenters', 'active');
+    Session.set('clickedHealthProfile', 'active');
 });
 
 // session varibles for update doctor navbar
 
 Template.patientNavbar.helpers({
 
-    clickedMedicalCenters:function () {
-        return Session.get('clickedMedicalCenters');
+    clickedHealthProfile:function () {
+        return Session.get('clickedHealthProfile');
+    },
+
+    clickedRecentVisits:function () {
+        return Session.get('clickedRecentVisits');
     },
 
      firstName:function () {
@@ -22,8 +26,15 @@ Template.patientNavbar.helpers({
 
 Template.patientNavbar.events({
 
-    'click #medicalCenters':function (event) {
-        Session.set('clickedMedicalCenters', 'active');
+    'click #healthProfile':function (event) {
+        Session.set('clickedHealthProfile', 'active');
+        Session.set('clickedRecentVisits', '');
+        Router.go("doctorMedicalCenters");
+    },
+
+    'click #recentVisits':function (event) {
+        Session.set('clickedRecentVisits', 'active');
+        Session.set('clickedHealthProfile', '');
         Router.go("doctorMedicalCenters");
     },
 

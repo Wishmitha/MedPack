@@ -28,6 +28,8 @@ Router.route('/main',
                 Router.go("allUsers");
             }else if(Roles.userIsInRole(Meteor.userId(),'doctor')) {
                 Router.go("doctorMedicalCenters");
+            }else if(Roles.userIsInRole(Meteor.userId(),'patient')) {
+                Router.go("patientHealthProfile");
             }
             this.next();
         },
@@ -74,8 +76,7 @@ Router.route('/main/edit-account',
                 this.layout('doctor');
                 this.render('editAccount', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'patient')){
-                this.layout('admin');
-                this.render('newAdmin', {to: 'main'});
+                this.render('editAccount', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'admin')){
                 this.layout('admin');
                 this.render('editAccount', {to: 'main'});
