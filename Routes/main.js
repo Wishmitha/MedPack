@@ -55,6 +55,22 @@ Router.route('/doctor-register',
         }
     });
 
+Router.route('/patient-register',
+    {
+        name: "patientRegister",
+
+        onBeforeAction: function () {
+            if (!!Meteor.user()) {
+                if (!Meteor.loggingIn()) Router.go("main");
+            }
+            this.next();
+        },
+
+        action : function () {
+            this.render('patientRegister');
+        }
+    });
+
 Router.route('/main/edit-account',
 
     {
@@ -76,6 +92,7 @@ Router.route('/main/edit-account',
                 this.layout('doctor');
                 this.render('editAccount', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'patient')){
+                this.layout('patient');
                 this.render('editAccount', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'admin')){
                 this.layout('admin');
@@ -105,8 +122,8 @@ Router.route('/main/edit-profile',
                 this.layout('doctor');
                 this.render('doctorEditProfile', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'patient')){
-                this.layout('admin');
-                this.render('newAdmin', {to: 'main'});
+                this.layout('patient');
+                this.render('patientEditProfile', {to: 'main'});
             }else if(Roles.userIsInRole(Meteor.userId(),'admin')){
                 this.layout('admin');
                 this.render('adminEditProfile', {to: 'main'});
