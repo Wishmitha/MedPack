@@ -1,5 +1,7 @@
 Template.doctorRegister.onCreated(function () {
 
+    Meteor.subscribe('allUsers');
+
     Session.set('emailError',false);
     Session.set('emailVal','');
 

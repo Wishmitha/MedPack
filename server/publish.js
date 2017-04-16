@@ -4,9 +4,7 @@ Meteor.publish('userData', function () { // publishing particular user given the
 
 Meteor.publish('allUsers',function () { // publishing user collections
 
-    if(Roles.userIsInRole(this.userId,'admin')){
         return Meteor.users.find({});
-    }
 
 });
 
