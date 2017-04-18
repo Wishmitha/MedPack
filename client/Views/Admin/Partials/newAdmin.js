@@ -57,13 +57,21 @@ Template.newAdmin.events({
         Session.set('emailVal',emailVar);
 
         //Check for duplicate or invalid emails
-        if(function() {
-                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(emailVar);
-        }){
+        if(emailFormatTest(emailVar)){
             Session.set('emailError',Meteor.users.find({"emails.address": emailVar}, {limit: 1}).count()>0);
+            console.log('noemailerror')
         }else{
             Session.set('emailError',true);
+            console.log('emailerror')
+        }
+
+        function emailFormatTest(email) {
+            if(email.length != 0) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }else{
+                return true;
+            }
         }
 
 
@@ -76,7 +84,7 @@ Template.newAdmin.events({
         }
 
         // Method call for create user
-        if(!Session.get('emailError') && !Session.get('isEmpty')) {
+        if(!Session.get('emailError') && !Session.get('isEmpty') && !Session.get('passwordError')) {
             Meteor.call('createAdmin', emailVar, passwordVar, firstNameVar, lastNameVar, addressVar);
             alert("Admin created successfully.")
             Router.go('admins');
