@@ -5,12 +5,25 @@ Template.patientEditProfile.onCreated(function () {
 });
 
 Template.patientEditProfile.helpers({
-    telNo:function () {
-        return Meteor.user().profile.telNo;
+
+    firstName : function () {
+      return Meteor.user().profile.firstName;
     },
 
-    address:function () {
-        return Meteor.user().profile.address;
+    lastName : function () {
+        return Meteor.user().profile.lastName;
+    },
+
+    age : function () {
+        return Meteor.user().profile.age;
+    },
+
+    weight:function () {
+        return Meteor.user().profile.weight;
+    },
+
+    telNo:function () {
+        return Meteor.user().profile.telNo;
     },
 
     isEmpty: function () {
@@ -27,10 +40,13 @@ Template.patientEditProfile.events({
 
         event.preventDefault();
 
+        var firstNameVar = event.target.firstName.value;
+        var lastNameVar = event.target.lastName.value;
+        var ageVar = event.target.age.value;
+        var weightVar = event.target.weight.value;
         var telNoVar = event.target.telNo.value;
-        var addressVar = event.target.address.value;
 
-        if(telNoVar.length == 0 || addressVar.length == 0){ //check for empty input fields
+        if(firstNameVar.length == 0 || lastNameVar.length == 0 || ageVar == 0 || weightVar == 0 || telNoVar.length == 0){ //check for empty input fields
             Session.set('isEmpty',true);
         }
 
@@ -38,8 +54,11 @@ Template.patientEditProfile.events({
             alert("Profile Updated Succesfully");
             Meteor.users.update(Meteor.userId(), {
                 $set: {
-                    "profile.telNo": telNoVar,
-                    "profile.address": addressVar
+                    "profile.firstName" : firstNameVar,
+                    "profile.lastName" : lastNameVar,
+                    "profile.age" : ageVar,
+                    "profile.weight" : weightVar,
+                    "profile.telNo": telNoVar
                 }
             });
         }
