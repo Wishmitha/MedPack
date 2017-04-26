@@ -14,6 +14,10 @@ Template.patientNavbar.helpers({
         return Session.get('clickedRecentVisits');
     },
 
+    clickedRegisteredMedCenters :function () {
+      return Session.get('clickedRegisteredMedCenters');
+    },
+
      firstName:function () {
         return Meteor.user().profile.firstName;
     },
@@ -29,12 +33,21 @@ Template.patientNavbar.events({
     'click #healthProfile':function (event) {
         Session.set('clickedHealthProfile', 'active');
         Session.set('clickedRecentVisits', '');
+        Session.set('clickedRegisteredMedCenters','');
         Router.go("doctorMedicalCenters");
     },
 
     'click #recentVisits':function (event) {
         Session.set('clickedRecentVisits', 'active');
         Session.set('clickedHealthProfile', '');
+        Session.set('clickedRegisteredMedCenters','');
+        Router.go("doctorMedicalCenters");
+    },
+
+    'click #registeredMedCenters':function (event) {
+        Session.set('clickedRecentVisits', '');
+        Session.set('clickedHealthProfile', '');
+        Session.set('clickedRegisteredMedCenters','active');
         Router.go("doctorMedicalCenters");
     },
 
