@@ -3,9 +3,8 @@ Template.healthProfile.helpers({
     prescriptions : function () {
         return Prescriptions.find({patientID:Meteor.userId()});
     },
-
-    doctorName : function () {
-        return
+    medicalCenter : function () {
+        return MedicalCenters.findOne({_id:this.medicalCenterID}).name;
     }
 
 });

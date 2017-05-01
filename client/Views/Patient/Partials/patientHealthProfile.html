@@ -16,22 +16,67 @@
 
                                 <div class="panel-heading" style="padding-bottom: 20px">
 
-                                    {{diagnosis}}
+                                    <b>{{diagnosis}}</b>
 
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default btn-sm" id="view">
-                                            <span class="glyphicon glyphicon-eye-open"></span> View
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-sm" id="delete">
-                                            <span class="glyphicon glyphicon-trash"></span> Delete
-                                        </button>
-                                    </div>
                                 </div>
 
                                 <div class="panel-body">
-                                    Date : <span class="text-muted">{{createdAt}}</span><br><br>
-                                    Doctor : <span class="text-muted">{{docorName}}</span><br><br>
-                                    Address : <span class="text-muted">{{profile.address}}</span>
+                                    <div class="row">
+
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <b>Date :</b> <span class="text-muted">{{createdAt}}</span>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <center><b>Doctor :</b> <a href="#">{{doctorName}}</a></center>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <div class="pull-right"> <b>Medical Center :</b> <a href="#">{{medicalCenter}}</a></div>
+                                        </div>
+
+                                    </div><br>
+
+                                    <b>Medicines :</b><br><br>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th><span class="text-muted">Name</span></th>
+                                                    <th><span class="text-muted">Dose</span></th>
+                                                    <th><span class="text-muted">Frequency</span></th>
+                                                    <th><span class="text-muted">Time</span></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                {{#each drugs}}
+                                                    <tr>
+                                                        <td>{{name}}</td>
+                                                        <td>{{dose}}</td>
+                                                        <td>{{frequency}}</td>
+                                                        <td>{{time}}</td>
+                                                    </tr>
+                                                {{/each}}
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+
+                                    {{#if report}}
+                                        <b>Report : </b><a href="{{report}}">{{report}}</a> <br><br>
+                                    {{/if}}
+
+                                    {{#if additionalInfo}}
+                                        <b>Additional Info : </b> <p class="text-muted">{{additionalInfo}}</p>
+                                    {{/if}}
+
+
                                 </div>
 
                             </div>
