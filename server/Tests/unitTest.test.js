@@ -49,7 +49,7 @@ describe('MedicalCenterCreation', function () {
     let eveningOpenVar = "234566";
     let eveningCloseVar = "9330404789V";
 
-    Meteor.apply('createDoctor', nameVar,addressVar,telNoVar,morningOpenVar,morningCloseVar,eveningOpenVar,eveningCloseVar);
+    Meteor.apply('createMedicalCenter', nameVar,addressVar,telNoVar,morningOpenVar,morningCloseVar,eveningOpenVar,eveningCloseVar);
 });
 
 describe('PatientCreation', function () {
@@ -68,5 +68,5 @@ describe('PatientCreation', function () {
     let weightVar = "77";
     let telNoVar = "0112345673";
 
-    Meteor.apply('createDoctor', emailVar,passwordVar,firstNameVar,lastNameVar,genderVar,ageVar,weightVar,telNoVar);
+    Meteor.apply('createPatient', emailVar,passwordVar,firstNameVar,lastNameVar,genderVar,ageVar,weightVar,telNoVar);
 });
