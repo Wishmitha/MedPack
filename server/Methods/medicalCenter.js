@@ -1,15 +1,14 @@
 Meteor.methods({
 
-    createMedicalCenter : function (name,address,telNo,morningOpen,morningClose,eveningOpen,eveningClose) { // server method to create a medical center
+    createMedicalCenter : function (name,address,telNo,consultentOpen,consultentClose,ownerName) { // server method to create a medical center
         MedicalCenters.insert({
             name:name,
             address: address,
             telNo:telNo,
-            morningOpen:morningOpen,
-            morningClose:morningClose,
-            eveningOpen: eveningOpen,
-            eveningClose:eveningClose,
+            consultentOpen:consultentOpen,
+            consultentClose:consultentClose,
             isVerified:false,
+            ownerName : ownerName,
             createdBy : this.userId
         });
     }

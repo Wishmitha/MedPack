@@ -20,7 +20,7 @@
                                     <label class="control-label" for="at-field-firstName">
                                         Medical Center Name
                                     </label>
-                                    <input type="text" class="form-control" id="at-field-firstName" name="medicalCenterName" placeholder="If a paticular name is not given to the medical center, enter the name as follows (Medical Center : Dr. Your name with initials)" autocapitalize="none" autocorrect="off" onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >=97 && event.charCode <= 122) || event.charCode==32 || event.charCode==46 || event.charCode==58'>
+                                    <input type="text" class="form-control" id="at-field-firstName" name="medicalCenterName" placeholder="Medical Center Name" autocapitalize="none" autocorrect="off" onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >=97 && event.charCode <= 122) || event.charCode==32 || event.charCode==46 || event.charCode==58'>
 
                                     <span class="help-block hide"></span>
                                 </div>
@@ -51,21 +51,8 @@
                                     <div class="panel panel-default">
                                         <div class="panel-body">
 
-                                            <div class="pull-left">
-                                                <label>
-                                                    Morning Hours :
-                                                </label>
+                                                <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="consultentOpen">  to  <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="consultentClose">
 
-                                                <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="morningOpen">  to  <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="morningClose">
-                                            </div>
-
-                                            <div class="pull-right">
-                                                <label>
-                                                    Evening Hours :
-                                                </label>
-
-                                                <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="eveningOpen">  to  <input type="time" id="timepicker" class="form-inline" data-provide="timepicker" data-template="modal" data-minute-step="1" data-modal-backdrop="true" name="eveningClose">
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
