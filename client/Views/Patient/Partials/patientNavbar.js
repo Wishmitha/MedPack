@@ -39,22 +39,17 @@ Template.patientNavbar.events({
         Session.set('clickedRecentVisits', '');
         Session.set('clickedRegisteredMedCenters','');
         Session.set('clickedAnalytics','');
-        Router.go("doctorMedicalCenters");
+        Session.set('searchItem','');
+        Router.go("patientHealthProfile");
     },
 
-    'click #recentVisits':function (event) {
-        Session.set('clickedRecentVisits', 'active');
-        Session.set('clickedHealthProfile', '');
-        Session.set('clickedRegisteredMedCenters','');
-        Session.set('clickedAnalytics','');
-        Router.go("doctorMedicalCenters");
-    },
 
     'click #registeredMedCenters':function (event) {
         Session.set('clickedRecentVisits', '');
         Session.set('clickedHealthProfile', '');
         Session.set('clickedRegisteredMedCenters','active');
         Session.set('clickedAnalytics','');
+        Session.set('searchItem','');
         Router.go("patientMedicalCenter");
     },
 
@@ -63,15 +58,18 @@ Template.patientNavbar.events({
         Session.set('clickedHealthProfile', '');
         Session.set('clickedRegisteredMedCenters','');
         Session.set('clickedAnalytics','active');
+        Session.set('searchItem','');
         Router.go("doctorMedicalCenters");
     },
 
     'click #editProfile': function(event) {
         Session.set('clickedMedicalCenters', '');
+        Session.set('searchItem','');
     },
 
     'click #editAccount': function(event) {
         Session.set('clickedMedicalCenters', '');
+        Session.set('searchItem','');
     },
 
     'click #logout': function(event) {
@@ -79,6 +77,7 @@ Template.patientNavbar.events({
         Session.set('clickedHealthProfile', '');
         Session.set('clickedRegisteredMedCenters','');
         Session.set('clickedAnalytics','');
+        Session.set('searchItem','');
         Meteor.logout();
         Router.go('/');
     }

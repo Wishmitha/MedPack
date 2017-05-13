@@ -10,6 +10,18 @@ Template.patientMedicalCenterRegister.helpers({
 
     isRegistered : function () {
         return PatientMedicalCenters.find({patientID:Meteor.userId(),medicalCenterID:this._id}).count()>0;
+    },
+
+    registeredMedicalCenters : function () {
+        var requiredEntries = PatientMedicalCenters.find({patientID:Meteor.userId()});
+
+        var medicalCenterIDS = [];
+
+        for(var i =0; i<requiredEntries.count();i++){
+            medicalCenterIDS.push(requiredEntries.fetch()[i].medicalCenterID)
+        }
+
+        return MedicalCenters.find({_id:{$in:medicalCenterIDS}});
     }
 
 
