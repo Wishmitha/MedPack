@@ -1,0 +1,122 @@
+<template name="joinMedicalCenter">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                        <div class="at-pwd-form">
+
+                            <form role="form" id="at-pwd-form" novalidate="" action="#" method="POST">
+
+                                <fieldset>
+
+                                    <div class="input-group">
+
+                                        <input class="form-control" list="medCenters" name="medicalCenter" id="search" placeholder="Search Medical Centers">
+
+                                        <datalist id="medCenters">
+                                            {{#each medicalCenters}}
+                                                <option value={{name}}>{{ownerName}}</option>
+                                            {{/each}}
+                                        </datalist>
+
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default glyphicon glyphicon-search" type="button" id="search"></button>
+                                        </span>
+
+                                    </div>
+
+                                </fieldset>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <br>
+                <br>
+
+
+                <div class="row">
+
+                    {{#each searchResults}}
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="row">
+
+                                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" style="padding-bottom: 20px">
+
+                                            <b>{{name}} : Dr. {{ownerName}}</b>
+
+                                            <div class="btn-group pull-right">
+
+                                                {{#unless isJoined}}
+
+                                                    <button type="button" class="btn btn-default btn-sm" id="join">
+                                                        <span class="glyphicon glyphicon-plus"></span> Join
+                                                    </button>
+
+                                                {{/unless}}
+
+                                                {{#if isJoined}}
+
+                                                    {{#unless isApproved}}
+
+                                                        <button type="button" class="btn btn-default btn-sm" id="cancel">
+                                                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel Request
+                                                        </button>
+
+                                                    {{/unless}}
+
+                                                    {{#if isApproved}}
+
+                                                        <button type="button" class="btn btn-default btn-sm" id="leave">
+                                                            <span class="glyphicon glyphicon glyphicon-minus"></span> Leave
+                                                        </button>
+
+                                                    {{/if}}
+
+                                                {{/if}}
+
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            Address : <span class="text-muted">{{address}}</span><br><br>
+                                            Contact Number : <span class="text-muted">{{telNo}}</span><br><br>
+                                            Consultent Hours : <span class="text-muted"> {{consultentOpen}} to {{consultentClose}}</span><br><br>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    {{/each}}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</template>

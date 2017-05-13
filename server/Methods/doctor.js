@@ -19,4 +19,18 @@ Meteor.methods({
         Roles.addUsersToRoles(doctorID,'doctor');
     },
 
+    joinMedicalCenter : function (doctorID,medicalCenterID,ownerID) { // server method to map joined medical  centers
+
+        DoctorMedicalCenters.insert({
+            doctorID:doctorID,
+            medicalCenterID: medicalCenterID,
+            ownerID:ownerID,
+            isApproved : false
+        });
+    },
+
+    cancelJoinRequest : function (doctorID,medicalCenterID) { // server method to create a patient
+        DoctorMedicalCenters.remove({doctorID:doctorID,medicalCenterID:medicalCenterID})
+    }
+
 });

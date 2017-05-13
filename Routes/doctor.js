@@ -46,6 +46,30 @@ Router.route('/main/new-medical-center',
     }
 );
 
+Router.route('/main/join-medical-center',
+
+    {
+        name: "joinMedicalCenter",
+
+        onBeforeAction: function () {
+
+            if (!Meteor.user()) {
+                if (!Meteor.loggingIn()) {
+                    Router.go("login");
+                }
+            }else if(Roles.userIsInRole(Meteor.userId(),'admin') || Roles.userIsInRole(Meteor.userId(),'patient')){
+                Router.go("main");
+            }
+            this.next();
+        },
+
+        action:function(){
+            this.layout('doctor');
+            this.render('joinMedicalCenter', {to: 'main'});
+        }
+    }
+);
+
 Router.route('/main/doctor-medical-centers/:_id',
     {
         name:"medicalCenter",

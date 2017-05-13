@@ -5,6 +5,12 @@ Template.doctorMedicalCenters.events({
 
     },
 
+    'click #joinMedicalCenter':function () {
+        Session.set('clickedMedicalCenters', '');
+        Router.go('joinMedicalCenter');
+
+    },
+
     'click #login':function () {
         Session.set('clickedMedicalCenters', '');
         Router.go('medicalCenter',{_id:this._id});
