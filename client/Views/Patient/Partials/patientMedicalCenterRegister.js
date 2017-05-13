@@ -8,6 +8,10 @@ Template.patientMedicalCenterRegister.helpers({
         return MedicalCenters.find({name:Session.get('searchItem')});
     },
 
+    isRegistered : function () {
+        return PatientMedicalCenters.find({patientID:Meteor.userId(),medicalCenterID:this._id}).count()>0;
+    }
+
 
 });
 
@@ -17,4 +21,27 @@ Template.patientMedicalCenterRegister.events({
         console.log(searchItem);
         Session.set('searchItem',searchItem);
     },
+    
+    'click #register':function (event) {
+        if(PatientMedicalCenters.find({patientID:Meteor.userId(),medicalCenterID:this._id}).count()==0)
+
+            if (confirm("Are you sure you want to register? This will allow access to the medical center to view your health profile.") == true) {
+                Meteor.call('registerInMedicalCenter',Meteor.userId(),this._id);
+            } else {
+
+            }
+
+    },
+
+    'click #unregister':function (event) {
+        if(PatientMedicalCenters.find({patientID:Meteor.userId(),medicalCenterID:this._id}).count()==1)
+
+            if (confirm("Are you sure you want to unregister? This will no longer allow access to the medical center to view your health profile.") == true) {
+                Meteor.call('unregisterMedicalCenter',Meteor.userId(),this._id);
+            } else {
+
+            }
+
+
+    }
 });

@@ -13,7 +13,7 @@
 
                             <div class="input-group">
 
-                                <input class="form-control" list="medicalCenters" name="medicalCenter" id="search">
+                                <input class="form-control" list="medicalCenters" name="medicalCenter" id="search" placeholder="Search Medical Centers">
 
                                 <datalist id="medicalCenters">
 
@@ -63,13 +63,21 @@
 
                                     <div class="btn-group pull-right">
 
-                                        <button type="button" class="btn btn-default btn-sm" id="view">
+                                        {{#unless isRegistered}}
+
+                                        <button type="button" class="btn btn-default btn-sm" id="register">
                                             <span class="glyphicon glyphicon-pushpin"></span> Register
                                         </button>
 
-                                        <button type="button" class="btn btn-default btn-sm" id="view">
+                                        {{/unless}}
+
+                                        {{#if isRegistered}}
+
+                                        <button type="button" class="btn btn-default btn-sm" id="unregister">
                                             <span class="glyphicon glyphicon-ban-circle"></span> Unregister
                                         </button>
+
+                                        {{/if}}
 
                                     </div>
                                 </div>

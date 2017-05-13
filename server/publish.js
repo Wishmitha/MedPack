@@ -33,3 +33,13 @@ Meteor.publish('prescriptions',function () { // publishing medical center collec
      }*/
 
 });
+
+Meteor.publish('patientMedicalCenters',function () { // publishing patient medical center collection
+
+    return PatientMedicalCenters.find({});
+
+    /*if(Roles.userIsInRole(this.userId,'doctor')){
+     return MedicalCenters.find();
+     }*/
+
+});

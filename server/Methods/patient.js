@@ -18,4 +18,15 @@ Meteor.methods({
         Roles.addUsersToRoles(patientID,'patient');
     },
 
+    registerInMedicalCenter : function (patientID,medicalCenterID) { // server method to create a patient
+        PatientMedicalCenters.insert({
+            patientID:patientID,
+            medicalCenterID: medicalCenterID
+        });
+    },
+
+    unregisterMedicalCenter : function (patientID,medicalCenterID) { // server method to create a patient
+        PatientMedicalCenters.remove({patientID:patientID,medicalCenterID:medicalCenterID})
+    }
+
 });
