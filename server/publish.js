@@ -14,6 +14,12 @@ Meteor.publish('allPatients',function () {
 
 });
 
+Meteor.publish('allDoctors',function () {
+
+    return Meteor.users.find({roles:["doctor"]});
+
+});
+
 Meteor.publish('medicalCenters',function () { // publishing medical center collection
 
     return MedicalCenters.find({});

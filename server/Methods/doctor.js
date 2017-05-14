@@ -23,14 +23,22 @@ Meteor.methods({
 
         DoctorMedicalCenters.insert({
             doctorID:doctorID,
-            medicalCenterID: medicalCenterID,
+            medicalCenterID:medicalCenterID,
             ownerID:ownerID,
+            doctor:Meteor.users.findOne({_id:doctorID}),
+            medicalCenter: MedicalCenters.findOne(medicalCenterID),
+            owner:Meteor.users.findOne({_id:ownerID}),
+            timeStamp : Date(),
             isApproved : false
         });
     },
 
     cancelJoinRequest : function (doctorID,medicalCenterID) { // server method to create a patient
         DoctorMedicalCenters.remove({doctorID:doctorID,medicalCenterID:medicalCenterID})
+    },
+
+    approveRequest : function (requestID) {
+        DoctorMedicalCenters.update({_id:requestID},{$set:{isApproved:true}})
     }
 
 });

@@ -4,4 +4,6 @@ Template.doctor.onCreated(function () { // subscribe to required collections
 
     Meteor.subscribe('doctorMedicalCenters');
 
+    Meteor.subscribe('allDoctors');
+
 });
