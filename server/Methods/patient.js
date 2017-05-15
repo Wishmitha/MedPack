@@ -21,7 +21,8 @@ Meteor.methods({
     registerInMedicalCenter : function (patientID,medicalCenterID) { // server method to create a patient
         PatientMedicalCenters.insert({
             patientID:patientID,
-            medicalCenterID: medicalCenterID
+            medicalCenterID: medicalCenterID,
+            patient : Meteor.users.findOne({_id:patientID})
         });
     },
 

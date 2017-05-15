@@ -60,3 +60,4 @@ Meteor.publish('doctorMedicalCenters',function () { // publishing doctor medical
 
 });
 
+
