@@ -12,7 +12,7 @@ Template.joinMedicalCenter.helpers({
         return DoctorMedicalCenters.find({doctorID:Meteor.userId(),medicalCenterID:this._id}).count()>0;
     },
 
-    isApproved : function () {
+    approval : function () {
         return DoctorMedicalCenters.findOne({doctorID:Meteor.userId(),medicalCenterID:this._id}).isApproved
     },
 
@@ -136,6 +136,16 @@ Template.joinMedicalCenter.events({
 
         if (confirm("Are you sure you want to approve this doctor? This will allow the doctor to access your medical center?") == true) {
             Meteor.call('approveRequest',this._id);
+        } else {
+
+        }
+    },
+
+    'click #remove':function (event) {
+        //if(PatientMedicalCenters.find({patientID:Meteor.userId(),medicalCenterID:this._id}).count()==1)
+
+        if (confirm("Are you sure you want to remove this doctor from your medical center?") == true) {
+            Meteor.call('cancelJoinRequest',this.doctorID,this.medicalCenterID);
         } else {
 
         }

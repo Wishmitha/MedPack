@@ -11,6 +11,11 @@ Meteor.methods({
             ownerName : ownerName,
             createdBy : this.userId
         });
+    },
+
+    removeMedicalCenter : function (medicalCenterID) {
+        MedicalCenters.remove({_id:medicalCenterID});
+        DoctorMedicalCenters.remove({medicalCenterID:medicalCenterID});
     }
 
 });
