@@ -1,0 +1,47 @@
+<template name="patientHistoryNavbar">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MedPack</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+
+                <ul class="nav navbar-nav">
+                    <li class="active" id="viewHistory" ><a>View History</a></li>
+                </ul>
+
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li ><a href="#"><span class="glyphicon glyphicon-user"></span>
+                        {{initials}} {{familyName}}
+                    </a>
+                    </li>
+
+                    <li ><a href="edit-profile" id="editProfile"><span class="glyphicon glyphicon-pencil"></span> Edit Profile </a></li>
+
+                    <li ><a href="edit-account" id="editAccount"><span class="glyphicon glyphicon-cog"></span> Edit Account </a></li>
+
+                    <li ><a href="#" id="logout"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
+
+                    <!--<li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li id="editProfile"><a href="edit-profile">Edit Profile</a></li>
+                            <li id="editAccount"><a href="edit-account">Edit Account</a></li>
+                        </ul>
+                    </li>-->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</template>

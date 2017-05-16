@@ -1,0 +1,149 @@
+<template name="patientHistory">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                        <div class="at-pwd-form">
+
+                            <form role="form" id="at-pwd-form" novalidate="" action="#" method="POST">
+
+                                <fieldset>
+
+                                    <div class="input-group">
+
+                                        <input class="form-control" list="medCenters" id="searchPatient" placeholder="Search Registered Patients">
+
+                                        <datalist id="medCenters">
+                                            {{#each medicalCenters}}
+                                                <option value="{{patient.profile.firstName}} {{patient.profile.lastName}}">Age {{patient.profile.age}}</option>
+                                            {{/each}}
+                                        </datalist>
+
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default glyphicon glyphicon-search" type="button" id="searchBtn"></button>
+                                        </span>
+
+                                    </div>
+
+                                </fieldset>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <br>
+                <br>
+
+
+                <div class="row">
+
+                    {{#each searchResults}}
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="row">
+
+                                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+
+                                    <div class="well well-sm"><h5><b>{{profile.firstName}} {{profile.lastName}} <span class="text-muted pull-right">{{profile.gender}} | {{profile.age}} Years | {{profile.weight}} Kg</span></b></h5></div>
+
+                                    {{#each prescriptions}}
+
+                                        <div class="panel panel-default">
+
+                                            <div class="panel-heading" style="padding-bottom: 20px">
+
+                                                <b>Diagnosis : <span class="text-muted">{{diagnosis}}</span></b>
+
+                                            </div>
+
+                                            <div class="panel-body">
+                                                <div class="row">
+
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                        <b>Date :</b> <span class="text-muted">{{createdAt}}</span>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                        <center><b>Doctor :</b> <span class="text-muted">{{doctorName}}</span></center>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                        <div class="pull-right"> <b>Medical Center :</b> <span class="text-muted">{{medicalCenterName}}</span> </div>
+                                                    </div>
+
+                                                </div><br>
+
+                                                <b>Medicines :</b><br><br>
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body">
+
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th><span class="text-muted">Name</span></th>
+                                                                <th><span class="text-muted">Dose</span></th>
+                                                                <th><span class="text-muted">Frequency</span></th>
+                                                                <th><span class="text-muted">Time</span></th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                            {{#each drugs}}
+                                                                <tr>
+                                                                    <td>{{name}}</td>
+                                                                    <td>{{dose}}</td>
+                                                                    <td>{{frequency}}</td>
+                                                                    <td>{{time}}</td>
+                                                                </tr>
+                                                            {{/each}}
+
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+
+                                                {{#if report}}
+                                                    <b>Report : </b><a href="{{report}}">{{report}}</a> <br><br>
+                                                {{/if}}
+
+                                                {{#if additionalInfo}}
+                                                    <b>Additional Info : </b> <p class="text-muted">{{additionalInfo}}</p>
+                                                {{/if}}
+
+
+                                            </div>
+
+                                        </div>
+
+                                    {{/each}}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    {{/each}}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</template>

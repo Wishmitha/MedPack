@@ -12,7 +12,8 @@ Template.doctorMedicalCenters.events({
     },
 
     'click #login':function () {
-        Session.set('clickedMedicalCenters', '');
+        Session.set('clickedMedicalCenters','');
+        Session.set('clickedNewPrescription', 'active');
         Router.go('medicalCenter',{_id:this._id});
     },
 

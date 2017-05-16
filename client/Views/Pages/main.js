@@ -19,3 +19,4 @@ Template.main.helpers({
         return Roles.userIsInRole(Meteor.userId(),'patient');
     }
 });
+

@@ -1,13 +1,18 @@
-Template.doctorNavbar.onCreated(function () {
-    Session.set('clickedMedicalCenters', 'active');
+// session varibles for update doctor navbar
+Template.patientHistoryNavbar.onCreated(function () { // subscribe to required collections
+
+    Session.set('medicalCenterID', Router.current().params._id);
+
 });
 
-// session varibles for update doctor navbar
-
-Template.doctorNavbar.helpers({
+Template.patientHistoryNavbar.helpers({
 
     clickedMedicalCenters:function () {
         return Session.get('clickedMedicalCenters');
+    },
+
+    clickedNewPrescription : function () {
+        return Session.get('clickedNewPrescription');
     },
 
     clickedViewHistory:function () {
@@ -24,24 +29,19 @@ Template.doctorNavbar.helpers({
 
 });
 
-Template.doctorNavbar.events({
-
-    'click #medicalCenters':function (event) {
-        Session.set('clickedMedicalCenters', 'active');
-        Session.set('clickedViewHistory', '');
-        Router.go("doctorMedicalCenters");
-        Session.set('searchItem','');
-    },
+Template.patientHistoryNavbar.events({
 
     'click #editProfile': function(event) {
         Session.set('clickedMedicalCenters', '');
         Session.set('clickedViewHistory', '');
+        Session.set('clickedNewPrescription', '');
         Session.set('searchItem','');
     },
 
     'click #editAccount': function(event) {
         Session.set('clickedMedicalCenters', '');
         Session.set('clickedViewHistory', '');
+        Session.set('clickedNewPrescription', '');
         Session.set('searchItem','');
     },
 
@@ -49,8 +49,10 @@ Template.doctorNavbar.events({
         Session.set('clickedAllUsers', '');
         Session.set('clickedMedicalCenters', '');
         Session.set('clickedViewHistory', '');
+        Session.set('clickedNewPrescription', '');
         Session.set('clickedAdmins', '');
         Session.set('searchItem','');
+
         Meteor.logout();
         Router.go('/');
     }
