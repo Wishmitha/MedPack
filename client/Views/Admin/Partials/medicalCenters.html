@@ -32,17 +32,25 @@
 
                                 <div class="panel-heading" style="padding-bottom: 20px">
 
-                                    {{name}}
+                                    <b>{{name}}</b>
 
                                     <div class="btn-group pull-right">
 
-                                        <button type="button" class="btn btn-default btn-sm" id="view">
-                                            <span class="glyphicon glyphicon-eye-open"></span> View
-                                        </button>
+                                        {{#unless isVerified}}
 
-                                        <button type="button" class="btn btn-default btn-sm" id="verify">
-                                            <span class="glyphicon glyphicon-ok"></span> Verify
-                                        </button>
+                                            <button type="button" class="btn btn-default btn-sm" id="verify">
+                                                <span class="glyphicon glyphicon-ok"></span> Verify
+                                            </button>
+
+                                        {{/unless}}
+
+                                        {{#if isVerified}}
+
+                                            <button type="button" class="btn btn-default btn-sm" id="unverify">
+                                                <span class="glyphicon glyphicon-remove"></span> Unverify
+                                            </button>
+
+                                        {{/if}}
 
                                         <button type="button" class="btn btn-default btn-sm" id="delete">
                                             <span class="glyphicon glyphicon-trash"></span> Delete

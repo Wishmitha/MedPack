@@ -9,3 +9,30 @@ Template.medicalCenters.helpers({
         return MedicalCenters.find();
     }
 });
+
+Template.medicalCenters.events({
+
+    'click #delete': function () {
+        if (confirm("Are you sure you want to completely remove this user?") == true) {
+            Meteor.users.remove(this._id);
+        } else {
+
+        }
+    },
+
+    'click #verify':function () {
+        if (confirm("Are you sure you want to verify this Medical Center?") == true) {
+            Meteor.call("verifyMedicalCenter",this._id);
+        } else {
+
+        }
+    },
+
+    'click #unverify':function () {
+        if (confirm("Are you sure you want to remove the verification from this Medical Center?") == true) {
+            Meteor.call("unverifyMedicalCenter",this._id);
+        } else {
+
+        }
+    },
+});

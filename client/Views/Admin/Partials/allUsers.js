@@ -31,6 +31,25 @@ Template.allUsers.events({
         } else {
 
         }
+    },
 
+    'click #verify':function () {
+        if (confirm("Are you sure you want to verify this user?") == true) {
+            Meteor.call("verifyDoctor",this._id);
+        } else {
+
+        }
+    },
+
+    'click #unverify':function () {
+        if (confirm("Are you sure you want to remove the verification from the user?") == true) {
+            Meteor.call("unverifyDoctor",this._id);
+        } else {
+
+        }
+    },
+
+    'click #registry':function () {
+        window.open('http://www.srilankamedicalcouncil.org/registry.php', '_blank');
     }
 });

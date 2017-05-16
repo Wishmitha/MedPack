@@ -5,7 +5,7 @@ Template.admin.onCreated(function () { // subscribe to required collection
     Meteor.subscribe('allUsers');
     Meteor.subscribe('medicalCenters');
 
-    document.title = "Admin";
+    document.title = "MedPack";
 
 });
 

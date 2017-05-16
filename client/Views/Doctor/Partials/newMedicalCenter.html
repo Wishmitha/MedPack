@@ -25,6 +25,18 @@
                                     <span class="help-block hide"></span>
                                 </div>
 
+                                <div class="at-input form-group">
+                                    <label class="control-label" for="at-field-lastName">
+                                        Type
+                                    </label>
+                                    <select class="form-control" name="type">
+                                        <option value="single">Single</option>
+                                        <option value="joined">Joined</option>
+                                    </select>
+
+                                    <span class="help-block hide"></span>
+                                </div>
+
 
                                 <div class="at-input form-group">
                                     <label class="control-label" for="at-field-address">
@@ -56,8 +68,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
 
                                 {{#if isEmpty}}
                                     <div class="form-group has-error has-feedback" id="errorPasswordAgain">

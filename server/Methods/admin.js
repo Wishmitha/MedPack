@@ -16,4 +16,20 @@ Meteor.methods({
         Roles.addUsersToRoles(adminID,'admin');
     },
 
+    verifyDoctor : function (doctorID) {
+        Meteor.users.update({_id:doctorID},{$set:{"profile.isVerified":true}});
+    },
+
+    unverifyDoctor : function (doctorID) {
+        Meteor.users.update({_id:doctorID},{$set:{"profile.isVerified":false}});
+    },
+
+    verifyMedicalCenter : function (medicalCenterID) {
+        MedicalCenters.update({_id:medicalCenterID},{$set:{"isVerified":true}});
+    },
+
+    unverifyMedicalCenter : function (medicalCenterID) {
+        MedicalCenters.update({_id:medicalCenterID},{$set:{"isVerified":false}});
+    },
+
 });

@@ -45,7 +45,7 @@ Template.patientHistoryNavbar.events({
         Session.set('searchItem','');
     },
 
-    'click #logout': function(event) {
+    'click #exit': function(event) {
         Session.set('clickedAllUsers', '');
         Session.set('clickedMedicalCenters', '');
         Session.set('clickedViewHistory', '');
@@ -53,8 +53,7 @@ Template.patientHistoryNavbar.events({
         Session.set('clickedAdmins', '');
         Session.set('searchItem','');
 
-        Meteor.logout();
-        Router.go('/');
+        window.close()
     }
 });
 

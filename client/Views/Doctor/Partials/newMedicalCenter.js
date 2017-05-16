@@ -21,6 +21,7 @@ Template.newMedicalCenter.events({
         event.preventDefault();
         var nameVar = event.target.medicalCenterName.value;
         var addressVar = event.target.address.value;
+        var typeVar = event.target.type.value;
         var telNoVar = event.target.telNo.value;
         var consultentOpenVar = event.target.consultentOpen.value;
         var consultentCloseVar = event.target.consultentClose.value;
@@ -33,7 +34,7 @@ Template.newMedicalCenter.events({
 
         // Method call for create medical center
         if(!Session.get('emailError') && !Session.get('isEmpty')) {
-            Meteor.call('createMedicalCenter', nameVar,addressVar,telNoVar,consultentOpenVar,consultentCloseVar,ownerName);
+            Meteor.call('createMedicalCenter', nameVar,typeVar,addressVar,telNoVar,consultentOpenVar,consultentCloseVar,ownerName);
             alert("Medical Center created successfully.")
             //Router.go('admins');
         }

@@ -1,12 +1,13 @@
 Meteor.methods({
 
-    createDoctor : function (email,password,initials,familyName,telNo,slmcRegNo,nicNo,address) { // server method to create a doctor
+    createDoctor : function (email,password,initials,familyName, qualifications, telNo,slmcRegNo,nicNo,address) { // server method to create a doctor
         var doctorID = Accounts.createUser({
             email: email,
             password: password,
             profile: {
                 initials:initials,
                 familyName:familyName,
+                qualifications: qualifications,
                 telNo:telNo,
                 slmcRegNo:slmcRegNo,
                 nicNo: nicNo,

@@ -26,12 +26,9 @@
 
                                     <div class="panel-heading" style="padding-bottom: 20px">
 
-                                        {{profile.firstName}} {{profile.lastName}}
+                                        <b>{{profile.firstName}} {{profile.lastName}}</b>
 
                                         <div class="btn-group pull-right">
-                                            <button type="button" class="btn btn-default btn-sm" id="view">
-                                                <span class="glyphicon glyphicon-eye-open"></span> View
-                                            </button>
                                             <button type="button" class="btn btn-default btn-sm" id="delete">
                                                 <span class="glyphicon glyphicon-trash"></span> Delete
                                             </button>
@@ -41,7 +38,7 @@
                                     <div class="panel-body">
                                         Email Address : <span class="text-muted">{{email}}</span><br><br>
                                         Date Joined : <span class="text-muted">{{createdAt}}</span><br><br>
-                                        Address : <span class="text-muted">{{profile.address}}</span>
+                                        Contact Number : <span class="text-muted">{{profile.telNo}}</span>
                                     </div>
 
                                 </div>
@@ -62,7 +59,29 @@
 
                     <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
 
-                        <div class="well well-sm"><center><h4>Doctors</h4></center></div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="well well-sm">
+                                    <div class="row">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                            <div class="row">
+                                                <div class="col-lg-2 col-lg-offset-6 col-md-2 col-sm-2 col-xs-2">
+                                                    <center><h4>Doctors</h4></center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn btn-default btn-md" id="registry">
+                                                    <span class="glyphicon glyphicon-share-alt"></span> SLMC Registry
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         {{#each users}}
 
@@ -72,17 +91,25 @@
 
                                     <div class="panel-heading" style="padding-bottom: 20px">
 
-                                        {{profile.initials}} {{profile.familyName}}
+                                        <b>{{profile.initials}} {{profile.familyName}} <span class="text-muted">( SLMC Reg No : {{profile.slmcRegNo}} )</span></b>
 
                                         <div class="btn-group pull-right">
 
-                                            <button type="button" class="btn btn-default btn-sm" id="view">
-                                                <span class="glyphicon glyphicon-eye-open"></span> View
-                                            </button>
+                                            {{#unless profile.isVerified}}
 
-                                            <button type="button" class="btn btn-default btn-sm" id="verify">
-                                                <span class="glyphicon glyphicon-ok"></span> Verify
-                                            </button>
+                                                <button type="button" class="btn btn-default btn-sm" id="verify">
+                                                    <span class="glyphicon glyphicon-ok"></span> Verify
+                                                </button>
+
+                                            {{/unless}}
+
+                                            {{#if profile.isVerified}}
+
+                                                <button type="button" class="btn btn-default btn-sm" id="unverify">
+                                                    <span class="glyphicon glyphicon-remove"></span> Unverify
+                                                </button>
+
+                                            {{/if}}
 
                                             <button type="button" class="btn btn-default btn-sm" id="delete">
                                                 <span class="glyphicon glyphicon-trash"></span> Delete
@@ -93,8 +120,11 @@
 
                                     <div class="panel-body">
                                         Email Address : <span class="text-muted">{{email}}</span><br><br>
-                                        Date Joined : <span class="text-muted">{{createdAt}}</span><br><br>
-                                        Address : <span class="text-muted">{{profile.address}}</span>
+                                        Qualifications : <span class="text-muted">{{profile.qualifications}}</span><br><br>
+                                        Contact Number : <span class="text-muted">{{profile.telNo}}</span><br><br>
+                                        NIC Number : <span class="text-muted">{{profile.telNo}}</span><br><br>
+                                        Address : <span class="text-muted">{{profile.nicNo}}</span><br><br>
+                                        Date Joined : <span class="text-muted">{{createdAt}}</span>
                                     </div>
 
                                 </div>
