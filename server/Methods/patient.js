@@ -42,7 +42,7 @@ Meteor.methods({
             }
         });
 
-        PatientMedicalCenters.update({patientID:Meteor.userId()},{
+        PatientMedicalCenters.update({patientID:this.userId},{
             $set: {
                 "patient.profile.firstName" : firstName,
                 "patient.profile.lastName" : lastName,

@@ -40,6 +40,30 @@ Meteor.methods({
 
     approveRequest : function (requestID) {
         DoctorMedicalCenters.update({_id:requestID},{$set:{isApproved:true}})
+    },
+
+    editDoctorProfile : function (telNo,address) {
+
+        Meteor.users.update({_id:this.userId}, {
+            $set: {
+                "profile.telNo" : telNo,
+                "profile.address" : address
+            }
+        });
+
+        DoctorMedicalCenters.update({doctorID:this.userId},{
+            $set: {
+                "doctor.profile.telNo" : telNo,
+                "doctor.profile.address" : address,
+            }
+        });
+
+        DoctorMedicalCenters.update({ownerID:this.userId},{
+            $set: {
+                "owner.profile.telNo" : telNo,
+                "owner.profile.address" : address,
+            }
+        });
     }
 
 });
