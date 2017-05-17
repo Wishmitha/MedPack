@@ -59,7 +59,7 @@ Template.patientNavbar.events({
         Session.set('clickedRegisteredMedCenters','');
         Session.set('clickedAnalytics','active');
         Session.set('searchItem','');
-        window.open("http://localhost:3000/main/medical-center-register");
+        Router.go("patientAnalytics");
     },
 
     'click #editProfile': function(event) {

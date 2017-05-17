@@ -45,3 +45,27 @@ Router.route('/main/medical-center-register',
         }
     }
 );
+
+Router.route('/main/analytics',
+
+    {
+        name: "patientAnalytics",
+
+        onBeforeAction: function () {
+
+            if (!Meteor.user()) {
+                if (!Meteor.loggingIn()) {
+                    Router.go("login");
+                }
+            }else if(Roles.userIsInRole(Meteor.userId(),'admin') || Roles.userIsInRole(Meteor.userId(),'doctor')){
+                Router.go("main");
+            }
+            this.next();
+        },
+
+        action:function(){
+            this.layout('patient');
+            this.render('patientAnalytics', {to: 'main'});
+        }
+    }
+);
