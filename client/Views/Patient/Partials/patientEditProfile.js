@@ -52,7 +52,9 @@ Template.patientEditProfile.events({
 
         if(!Session.get('isEmpty')) {
             alert("Profile Updated Succesfully");
-            Meteor.users.update(Meteor.userId(), {
+            Meteor.call('editPatientProfile',firstNameVar,lastNameVar,ageVar,weightVar,telNoVar)
+
+            /*Meteor.users.update(Meteor.userId(), {
                 $set: {
                     "profile.firstName" : firstNameVar,
                     "profile.lastName" : lastNameVar,
@@ -61,6 +63,16 @@ Template.patientEditProfile.events({
                     "profile.telNo": telNoVar
                 }
             });
+
+            PatientMedicalCenters.update({patientID:Meteor.userId()},{
+                $set: {
+                    "patient.profile.firstName" : firstNameVar,
+                    "patient.profile.lastName" : lastNameVar,
+                    "patient.profile.age" : ageVar,
+                    "patient.profile.weight" : weightVar,
+                    "patient.profile.telNo": telNoVar
+                }
+            });*/
         }
 
     }

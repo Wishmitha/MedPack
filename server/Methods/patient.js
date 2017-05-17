@@ -28,6 +28,29 @@ Meteor.methods({
 
     unregisterMedicalCenter : function (patientID,medicalCenterID) { // server method to create a patient
         PatientMedicalCenters.remove({patientID:patientID,medicalCenterID:medicalCenterID})
+    },
+
+    editPatientProfile : function (firstName,lastName,age,weight,telNo) {
+
+        Meteor.users.update({_id:this.userId}, {
+            $set: {
+                "profile.firstName" : firstName,
+                "profile.lastName" : lastName,
+                "profile.age" : age,
+                "profile.weight" : weight,
+                "profile.telNo": telNo
+            }
+        });
+
+        PatientMedicalCenters.update({patientID:Meteor.userId()},{
+            $set: {
+                "patient.profile.firstName" : firstName,
+                "patient.profile.lastName" : lastName,
+                "patient.profile.age" : age,
+                "patient.profile.weight" : weight,
+                "patient.profile.telNo": telNo
+            }
+        });
     }
 
 });
