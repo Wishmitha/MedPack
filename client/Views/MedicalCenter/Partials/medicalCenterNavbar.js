@@ -19,6 +19,10 @@ Template.medicalCenterNavbar.helpers({
         return Session.get('clickedViewHistory');
     },
 
+    clickedAnalytics:function () {
+        return Session.get('clickedAnalytics');
+    },
+
     initials:function () {
         return Meteor.user().profile.initials;
     },
@@ -37,6 +41,7 @@ Template.medicalCenterNavbar.events({
         Session.set('clickedNewPrescription', '');
         Session.set('searchItem','');
         Session.set('medicalCenterID', '');
+        Session.set('clickedAnalytics', '');
 
         Router.go("doctorMedicalCenters");
 
@@ -45,6 +50,7 @@ Template.medicalCenterNavbar.events({
     'click #viewHistory':function (event) {
         Session.set('clickedMedicalCenters', '');
         Session.set('clickedNewPrescription', 'active');
+        Session.set('clickedAnalytics', '');
         Session.set('searchItem','');
 
         //Router.go("viewHistory",{_id:Session.get('medicalCenterID')});
@@ -56,15 +62,27 @@ Template.medicalCenterNavbar.events({
         Session.set('clickedMedicalCenters', '');
         Session.set('clickedViewHistory', '');
         Session.set('clickedNewPrescription', 'active');
+        Session.set('clickedAnalytics', '');
         Session.set('searchItem','');
 
         Router.go('medicalCenter',{_id:Session.get('medicalCenterID')});
+    },
+
+    'click #analytics':function (event) {
+        Session.set('clickedMedicalCenters', '');
+        Session.set('clickedViewHistory', '');
+        Session.set('clickedNewPrescription', '');
+        Session.set('clickedAnalytics', 'active');
+        Session.set('searchItem','');
+
+        Router.go('medicalCenterAnalytics',{_id:Session.get('medicalCenterID')});
     },
 
     'click #editProfile': function(event) {
         Session.set('clickedMedicalCenters', '');
         Session.set('clickedViewHistory', '');
         Session.set('clickedNewPrescription', '');
+        Session.set('clickedAnalytics', '');
         Session.set('searchItem','');
     },
 
@@ -72,6 +90,7 @@ Template.medicalCenterNavbar.events({
         Session.set('clickedMedicalCenters', '');
         Session.set('clickedViewHistory', '');
         Session.set('clickedNewPrescription', '');
+        Session.set('clickedAnalytics', '');
         Session.set('searchItem','');
     },
 
@@ -82,6 +101,7 @@ Template.medicalCenterNavbar.events({
         Session.set('clickedNewPrescription', '');
         Session.set('clickedAdmins', '');
         Session.set('searchItem','');
+        Session.set('clickedAnalytics', '');
 
         Meteor.logout();
         Router.go('/');

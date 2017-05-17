@@ -120,3 +120,27 @@ Router.route('/main/view-patient-history/:_id',
         }
     }
 );
+
+Router.route('/main/analytics/:_id',
+    {
+        name:"medicalCenterAnalytics",
+
+        onBeforeAction: function () {
+
+            if (!Meteor.user()) {
+                if (!Meteor.loggingIn()) {
+                    Router.go("login");
+                }
+            }else if(Roles.userIsInRole(Meteor.userId(),'admin') || Roles.userIsInRole(Meteor.userId(),'patient')){
+                Router.go("main");
+            }
+            this.next();
+        },
+
+        action:function(){
+            this.layout('doctor');
+            this.render('medicalCenterNavbar', {to: 'navbar'});
+            this.render('medicalCenterAnalytics', {to: 'main'});
+        }
+    }
+);

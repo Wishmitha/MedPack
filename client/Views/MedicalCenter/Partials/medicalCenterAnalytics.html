@@ -1,0 +1,56 @@
+<template name="medicalCenterAnalytics">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                <div class="well well-sm"><center><h5><b>Common Diseases : Medical Center</b></h5></center></div>
+                {{> highchartsHelper chartId="test" chartWidth="100%" charHeight="100%" chartObject=topGenresChart}}
+
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="well well-sm"><center><h5><b>Common Diseases : Overall</b></h5></center></div>
+                {{> highchartsHelper chartId="test2" chartWidth="100%" charHeight="100%" chartObject=testChart}}
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="well well-sm"><center><h5><b>Patient Summaries</b></h5></center></div>
+            </div>
+
+
+            {{#each prescriptions}}
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <b>{{createdAt}} :</b> {{patientName}} visited <span class="text-muted">to get treatement for</span> {{diagnosis}} <span class="text-muted">by</span> {{doctorName}}.
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {{/each}}
+
+        </div>
+
+    </div>
+</template>
