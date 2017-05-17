@@ -25,9 +25,17 @@ Template.allUsers.helpers({
 
 Template.allUsers.events({
 
-    'click #delete': function () {
-        if (confirm("Are you sure you want to completely remove this user?") == true) {
-            Meteor.users.remove(this._id);
+    'click #deletePatient': function () {
+        if (confirm("Are you sure you want to completely remove this patient?") == true) {
+            Meteor.call("removePatient",this._id);
+        } else {
+
+        }
+    },
+
+    'click #deleteDoctor': function () {
+        if (confirm("Are you sure you want to completely remove this doctor?") == true) {
+            Meteor.call("removeDoctor",this._id);
         } else {
 
         }

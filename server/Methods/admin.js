@@ -16,6 +16,19 @@ Meteor.methods({
         Roles.addUsersToRoles(adminID,'admin');
     },
 
+    removePatient: function (patientID) {
+        Meteor.users.remove({_id:patientID});
+        PatientMedicalCenters.remove({patientID:patientID});
+        Prescriptions.remove({patientID:patientID});
+    },
+
+    removeDoctor: function (doctorID) {
+        Meteor.users.remove({_id:doctorID});
+        DoctorMedicalCenters.remove({doctorID:doctorID});
+        DoctorMedicalCenters.remove({ownerID:doctorID});
+        MedicalCenters.remove({createdBy:doctorID})
+    },
+
     verifyDoctor : function (doctorID) {
         Meteor.users.update({_id:doctorID},{$set:{"profile.isVerified":true}});
     },

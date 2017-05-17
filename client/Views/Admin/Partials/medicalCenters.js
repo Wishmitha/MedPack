@@ -6,15 +6,15 @@ Template.medicalCenters.onCreated(function () {
 
 Template.medicalCenters.helpers({
     medicalcenters: function () {
-        return MedicalCenters.find();
+        return MedicalCenters.find({},{sort: {createdAt: -1}});
     }
 });
 
 Template.medicalCenters.events({
 
     'click #delete': function () {
-        if (confirm("Are you sure you want to completely remove this user?") == true) {
-            Meteor.users.remove(this._id);
+        if (confirm("Are you sure you want to completely remove this Medical Center?") == true) {
+            Meteor.call("removeMedicalCenter",this._id);
         } else {
 
         }

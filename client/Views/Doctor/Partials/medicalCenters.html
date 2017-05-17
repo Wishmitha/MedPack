@@ -14,7 +14,7 @@
                             </div>
                         </div>
 
-                        {{#if isVerified}}
+                        {{#if verified}}
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                 <div class="btn-group pull-right">
                                     <button type="button" class="btn btn-default btn-md" id="joinMedicalCenter">
@@ -121,7 +121,7 @@
                                             Consultent Hours : <span class="text-muted"> {{consultentOpen}} to {{consultentClose}}</span><br><br>
 
                                             <span class="text-danger">{{#unless isVerified}}Patients cannot register on this Medical Center. Wait for the verification.{{/unless}}</span>
-                                            
+
                                         </div>
 
                                     </div>

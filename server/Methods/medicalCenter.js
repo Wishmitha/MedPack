@@ -11,13 +11,14 @@ Meteor.methods({
             isVerified:false,
             ownerName : ownerName,
             createdBy : this.userId,
-            isVerified : false
+            createdAt: new Date(),
         });
     },
 
-    removeMedicalCenter : function (medicalCenterID) {
+    removeMedicalCenter: function (medicalCenterID) {
         MedicalCenters.remove({_id:medicalCenterID});
         DoctorMedicalCenters.remove({medicalCenterID:medicalCenterID});
-    }
+        PatientMedicalCenters.remove({medicalCenterID:medicalCenterID});
+    },
 
 });
