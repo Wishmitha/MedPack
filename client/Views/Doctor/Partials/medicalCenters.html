@@ -13,16 +13,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn btn-default btn-md" id="joinMedicalCenter">
-                                    <span class="glyphicon glyphicon-plus"></span> Join Medical Center
-                                </button>
-                                <button type="button" class="btn btn-default btn-md" id="newMedicalCenter">
-                                    <span class="glyphicon glyphicon-plus"></span> New Medical Center
-                                </button>
+
+                        {{#if isVerified}}
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="btn-group pull-right">
+                                    <button type="button" class="btn btn-default btn-md" id="joinMedicalCenter">
+                                        <span class="glyphicon glyphicon-plus"></span> Join Medical Center
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-md" id="newMedicalCenter">
+                                        <span class="glyphicon glyphicon-plus"></span> New Medical Center
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                        {{/if}}
 
                     </div>
                 </div>
@@ -35,35 +38,41 @@
 
                 <div class="well well-sm"><center><h5><b>Owned Medical Centers</b></h5></center></div>
 
-                {{#each medicalcenters}}
+                {{#if verified}}
 
+                    {{#each medicalcenters}}
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                        <div class="row">
+                            <div class="row">
 
-                            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
 
-                                <div class="panel panel-default">
+                                    <div class="panel panel-default">
 
-                                    <div class="panel-heading" style="padding-bottom: 20px">
+                                        <div class="panel-heading" style="padding-bottom: 20px">
 
-                                        {{name}}
+                                            {{name}} <span class="text-muted">{{#unless isVerified}}(Not Verified){{/unless}}</span>
 
-                                        <div class="btn-group pull-right">
-                                            <button type="button" class="btn btn-default btn-sm" id="login">
-                                                <span class="glyphicon glyphicon-log-in"></span> Login
-                                            </button>
-                                            <button type="button" class="btn btn-default btn-sm" id="delete">
-                                                <span class="glyphicon glyphicon-trash"></span> Delete
-                                            </button>
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn btn-default btn-sm" id="login">
+                                                    <span class="glyphicon glyphicon-log-in"></span> Login
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-sm" id="delete">
+                                                    <span class="glyphicon glyphicon-trash"></span> Delete
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="panel-body">
-                                        Address : <span class="text-muted">{{address}}</span><br><br>
-                                        Contact Number : <span class="text-muted">{{telNo}}</span><br><br>
-                                        Consultent Hours : <span class="text-muted"> {{consultentOpen}} to {{consultentClose}}</span><br><br>
+                                        <div class="panel-body">
+                                            Address : <span class="text-muted">{{address}}</span><br><br>
+                                            Contact Number : <span class="text-muted">{{telNo}}</span><br><br>
+                                            Consultent Hours : <span class="text-muted"> {{consultentOpen}} to {{consultentClose}}</span><br><br>
+
+                                            <span class="text-danger">{{#unless isVerified}}Patients cannot register on this Medical Center. Wait for the verification.{{/unless}}</span>
+
+                                        </div>
+
                                     </div>
 
                                 </div>
@@ -72,9 +81,9 @@
 
                         </div>
 
-                    </div>
+                    {{/each}}
 
-                {{/each}}
+                {{/if}}
 
             </div>
 
@@ -82,32 +91,39 @@
 
                 <div class="well well-sm"><center><h5><b>Joined Medical Centers</b></h5></center></div>
 
-                {{#each joinedMedicalCenters}}
+                {{#if verified}}
+
+                    {{#each joinedMedicalCenters}}
 
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                        <div class="row">
+                            <div class="row">
 
-                            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
 
-                                <div class="panel panel-default">
+                                    <div class="panel panel-default">
 
-                                    <div class="panel-heading" style="padding-bottom: 20px">
+                                        <div class="panel-heading" style="padding-bottom: 20px">
 
-                                        {{name}}
+                                            {{name}} <span class="text-muted">{{#unless isVerified}}(Not Verified){{/unless}}</span>
 
-                                        <div class="btn-group pull-right">
-                                            <button type="button" class="btn btn-default btn-sm" id="login">
-                                                <span class="glyphicon glyphicon-log-in"></span> Login
-                                            </button>
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn btn-default btn-sm" id="login">
+                                                    <span class="glyphicon glyphicon-log-in"></span> Login
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="panel-body">
-                                        Address : <span class="text-muted">{{address}}</span><br><br>
-                                        Contact Number : <span class="text-muted">{{telNo}}</span><br><br>
-                                        Consultent Hours : <span class="text-muted"> {{consultentOpen}} to {{consultentClose}}</span><br><br>
+                                        <div class="panel-body">
+                                            Address : <span class="text-muted">{{address}}</span><br><br>
+                                            Contact Number : <span class="text-muted">{{telNo}}</span><br><br>
+                                            Consultent Hours : <span class="text-muted"> {{consultentOpen}} to {{consultentClose}}</span><br><br>
+
+                                            <span class="text-danger">{{#unless isVerified}}Patients cannot register on this Medical Center. Wait for the verification.{{/unless}}</span>
+                                            
+                                        </div>
+
                                     </div>
 
                                 </div>
@@ -116,13 +132,19 @@
 
                         </div>
 
-                    </div>
+                    {{/each}}
 
-                {{/each}}
+                {{/if}}
 
             </div>
 
         </div>
+
+        {{#unless verified}}
+            <div class="row">
+                <center><span class="text-danger" for="inputError">Your account should be verified in order to join or create Medaical Centers.</span></center>
+            </div>
+        {{/unless}}
 
     </div>
 </template>

@@ -1,7 +1,7 @@
 Template.patientMedicalCenterRegister.helpers({
 
     medicalCenters : function () {
-        return MedicalCenters.find();
+        return MedicalCenters.find({isVerified:true});
     },
 
     searchResults:function () {

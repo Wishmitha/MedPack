@@ -1,7 +1,7 @@
 Template.joinMedicalCenter.helpers({
 
     medicalCenters : function () {
-        return MedicalCenters.find({$and:[{createdBy:{$not:Meteor.userId()}},{type:"joined"}]});
+        return MedicalCenters.find({$and:[{createdBy:{$not:Meteor.userId()}},{type:"joined"},{isVerified:true}]});
     },
 
     searchResults:function () {

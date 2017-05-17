@@ -33,6 +33,10 @@ Template.doctorMedicalCenters.helpers({
         return MedicalCenters.find({createdBy:Meteor.userId()});
     },
 
+    verified : function () {
+        return Meteor.user().profile.isVerified;
+    },
+
     joinedMedicalCenters : function () {
         var requiredEntries = DoctorMedicalCenters.find({doctorID:Meteor.userId(),isApproved:true})
 
